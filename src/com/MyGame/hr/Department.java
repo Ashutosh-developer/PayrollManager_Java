@@ -8,7 +8,7 @@ public class Department {
 
     public Department(String n){ this.name = n; }
 
-    public String getName(){ return name; }
+    public String getName() { return name; }
 
-    public ArrayList<Employee> getEmployees() {return employees; }
+    public ArrayList<Employee> getEmployees() { return employees; }
 }

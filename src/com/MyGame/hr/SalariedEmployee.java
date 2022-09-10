@@ -3,6 +3,7 @@ package com.MyGame.hr;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.invoke.SerializedLambda;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 public class SalariedEmployee extends Employee{
 
     private double salary;
+
     public SalariedEmployee(String name) {
         super(name);
     }
@@ -31,12 +33,12 @@ public class SalariedEmployee extends Employee{
         Company company = new Company("ABC Company", address);
 
         Date date = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("DD/MM/YYYY");
+        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
         String strDate = format.format(date);
 
         String outStr;
         outStr = "\t\t\t" + company.getName() +
-                "\n\t" + "Name: " + getName() + " - Employee Id: " + getEmployee_ID() +
+                "\n\t" + "Name: " + getName() + " - Employee Id: " + getEmployeeID() +
                 "\n\t" + "Pay Date \t " + strDate +
                 "\n\t" + "Gross Salary $" + salary +
                 "\n\t" + "Net Salary $" + calculatePay() + "\n\n";
@@ -49,7 +51,7 @@ public class SalariedEmployee extends Employee{
                 writer.write(employee.generatePayStub());
             }
         }catch (IOException e){
-            System.out.println("An error occurred printing the pay stubs");
+            System.out.println("An error occurred printing the pay stubs.");
             e.printStackTrace();
         }
     }

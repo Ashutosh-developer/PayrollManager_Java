@@ -1,6 +1,6 @@
 package com.MyGame.hr;
 
-public abstract class Employee implements Payable {
+public abstract class Employee implements Payable{
 
     private String name;
     private double payRate;
@@ -23,19 +23,21 @@ public abstract class Employee implements Payable {
         payRate = STARTING_PAY_RATE;
     }
 
-    public String getName() {return name;}
+    public String getName() { return name; }
 
-    public int getEmployee_ID() { return Employee_ID; }
+    public int getEmployeeID() { return Employee_ID; }
 
     public double getPayRate() { return payRate; }
 
+    public String getDepartment() { return department.getName(); }
+
     public void changeName(String newName) { name = newName; }
 
-    public void changePayRate(double newRate) { payRate = newRate;}
+    public void changePayRate(double newRate) { payRate = newRate; }
 
     public void setAddress(Address addr) { address = addr; }
 
-    public void displayAddress() { address.getAddress();}
+    public void displayAddress() { address.getAddress(); }
 
     public static int getNextID() {
         int id = nextID;
@@ -47,4 +49,5 @@ public abstract class Employee implements Payable {
     public String toString(){
         return this.name;
     }
+
 }
