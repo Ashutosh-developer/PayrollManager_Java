@@ -6,7 +6,7 @@ public abstract class Employee implements Payable {
     private double payRate;
     private final int Employee_ID;
     private Address address;
-    private Department department;
+    protected Department department;
     private static int nextID = 1000;
     public static double STARTING_PAY_RATE = 7.75;
 
@@ -41,5 +41,10 @@ public abstract class Employee implements Payable {
         int id = nextID;
         nextID++;
         return id;
+    }
+
+    @Override
+    public String toString(){
+        return this.name;
     }
 }
